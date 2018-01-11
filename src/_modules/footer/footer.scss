@@ -3,5 +3,33 @@
     width: 100%;
     height: 100px;
     margin-top: -100px;
-    background: $grey;
+    background: hsl(190,100,50);;
+}
+.simple-logo{
+    &__link{
+        text-decoration: none;
+    }
+    &__cont{
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 2em;
+        animation: color_change 5s infinite;
+    }
+}
+@keyframes color_change{
+    0%{
+        color: #fff;
+    }
+    30%{
+        color: #aff;
+    }
+    50%{
+        color: #aaf;
+    }
+    70%{
+        color: #faf;
+    }
+    90%{
+        color: #afa;
+    }
 }

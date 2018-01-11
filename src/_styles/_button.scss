@@ -1,9 +1,11 @@
 
 .btn_1{
-    color: red;
+    color: $grey;
+    border: 1px solid $accent / .9;
+    background: $accent / .002;
     @extend .trans;
     &:hover{
-        background: green;
+        background: $accent;
         color: #fff;
     }
 }

@@ -4,6 +4,10 @@
 {% set _class = spec.class or '' %}
 
 <footer class="page-footer">
-  
+  <div class="simple-logo">
+    <a href="" class="simple-logo__link">
+        <span class="simple-logo__cont">[rn]</span>
+    </a>
+  </div>
 </footer>
 {% endmacro %}
