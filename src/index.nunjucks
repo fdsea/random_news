@@ -1,0 +1,35 @@
+{% extends '_layouts/base.nunjucks' %}
+
+
+{% import "_modules/button/button.nunjucks" as button %}
+
+
+{% block content %}
+  <section class="section">
+    <h2 class="section__title">Cards Wrapper</h2>
+    {% for card in site.data.cards %}
+      <article class="card">
+        <div class="card__content">
+          {{card.content}}
+        </div>
+        {{button.content({
+          text: card.text,
+          class: 'btn btn_1',
+          type: 'submit',
+          id: 'btn'
+        })}}
+        <div class="card__info">
+          <span class="info-like">
+            <img class="info-like__pic" src = "images/like.png"/>
+            <span class="info-like__amount">{{ card.like_amount }}</span>
+          </span>
+          <span class="info-share">
+            <a href = "#" class="info-share__link">Share
+              <img class="info-share__pic" src = "images/share.png"/>
+            </a>  
+          </span>
+        </div>
+      </article>
+    {% endfor %}
+  </section>  
+{% endblock %}

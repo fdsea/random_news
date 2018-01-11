@@ -1,0 +1,50 @@
+{% macro content(spec) %}
+
+{% set spec = spec or {} %}
+{% set _items = spec.items or {} %}
+
+<header class="page-header">
+    <canvas class="page-header__canvas-bg"></canvas>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="filter-svg">
+      <defs>
+        <filter id="filter">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 40 -10"/>
+        </filter>
+      </defs>
+	  </svg>
+    <div class="infosect">
+      <div class="logo-wrap">
+          <div class="logo-wrap__logo"><a class="logo-wrap__logo-link" href="#">[Random News]</a></div>
+      </div>
+      <div class = "search-section">
+        <form class="searh-section__form" method="get" action="">
+          <input type="text" class="search-section__input" placeholder="enter"/>
+          <button type="submit" class="search-section__btn">Send</button>
+        </form>
+      </div>
+      <div class="login-section">
+        <a href="#" class="login-section__link login-section--login-link">LogIn</a> / 
+        <a href="#" class="login-section__link login-section--registration-link">Registration</a>
+      </div>
+      <nav class="nav">
+        <ul class="nav__list">
+          {% for item in _items %}
+            <li class="nav__item">
+              <a href="{{ item.href }}" class="nav__link">{{ item.text }}</a>
+              {% if item.sub %}
+                <ul class="nav__list-sub">
+                  {% for subitem in item.sub %}
+                    <li class="nav__item-sub">
+                      <a href="{{ subitem.link }}" class="nav__link-sub">{{ subitem.text }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+    </div>
+</header>
+{% endmacro %}

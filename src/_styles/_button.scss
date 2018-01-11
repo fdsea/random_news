@@ -1,0 +1,9 @@
+
+.btn_1{
+    color: red;
+    @extend .trans;
+    &:hover{
+        background: green;
+        color: #fff;
+    }
+}

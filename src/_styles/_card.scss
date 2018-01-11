@@ -1,0 +1,65 @@
+.card{
+    max-width: 200px;
+    padding: .5em .5em 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    font-family: $main_font;
+    display: inline-block;
+    margin-bottom: .25em;
+    &__content{
+        color: $grey;
+        min-height: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        &:before{
+            content: '';
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 10px;
+            bottom: 0;
+            left: 0;
+            background: rgba(255,255,255, .5);
+        }
+    }
+}
+.card__info{
+    display: block;
+    .info-like{
+        float: left;
+        padding: 5px 0;
+        cursor: pointer;
+        &__pic{
+            width: 25px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        &__amount{
+            display: inline-block;
+            font-size: .8em;
+            font-weight: bold;
+            color: $grey;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+    }
+    .info-share{
+        float: right;
+        padding: 15px 0 0;
+        font-size: .8em;
+        &__link{
+            color: $grey;
+            display: flex;
+            align-items: center;
+            @extend .trans;
+            &:hover{
+                color: #000;
+            }
+        }
+        &__pic{
+            width: 15px;
+            margin-left: 5px;
+        }
+    }
+}
